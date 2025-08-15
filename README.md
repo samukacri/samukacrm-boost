@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+<p align="center">
+<a href="http://krayincrm.com"><img src="https://bagisto.com/wp-content/uploads/2021/06/bagisto-logo.png" alt="Total Downloads"></a>
+</p>
 
-## Project info
+<p align="center">
+<a href="https://packagist.org/packages/krayin/laravel-crm"><img src="https://poser.pugx.org/krayin/laravel-crm/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/krayin/laravel-crm"><img src="https://poser.pugx.org/krayin/laravel-crm/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/krayin/laravel-crm"><img src="https://poser.pugx.org/krayin/laravel-crm/license.svg" alt="License"></a>
+</p>
 
-**URL**: https://lovable.dev/projects/d02608c0-a4b0-47dc-84fa-3c5d0835b199
 
-## How can I edit this code?
+![enter image description here](https://raw.githubusercontent.com/krayin/temp-media/master/dashboard.png)
 
-There are several ways of editing your application.
+## Topics
 
-**Use Lovable**
+1. [Introduction](#introduction)
+2. [Documentation](#documentation)
+3. [Requirements](#requirements)
+4. [Installation & Configuration](#installation-and-configuration)
+4. [Docker Installation](https://devdocs.krayincrm.com/2.0/introduction/docker.html)
+5. [License](#license)
+6. [Security Vulnerabilities](#security-vulnerabilities)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d02608c0-a4b0-47dc-84fa-3c5d0835b199) and start prompting.
+### Introduction
 
-Changes made via Lovable will be committed automatically to this repo.
+[Krayin CRM](https://krayincrm.com) is a hand tailored CRM framework built on some of the hottest opensource technologies
+such as [Laravel](https://laravel.com) (a [PHP](https://secure.php.net/) framework) and [Vue.js](https://vuejs.org)
+a progressive Javascript framework.
 
-**Use your preferred IDE**
+**Free & Opensource Laravel CRM solution for SMEs and Enterprises for complete customer lifecycle management.**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Read our documentation: [Krayin CRM Docs](https://devdocs.krayincrm.com/)**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**We also have a forum for any type of concerns, feature requests, or discussions. Please visit: [Krayin CRM Forums](https://forums.krayincrm.com/)**
 
-Follow these steps:
+# Visit our live [Demo](https://demo.krayincrm.com)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+<a href="javascript:void();">
+    <img class="flag-img" src="https://raw.githubusercontent.com/krayin/temp-media/master/visit-our-live-demo.png" alt="Chinese" width="100%">
+</a>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+It packs in lots of features that will allow your E-Commerce business to scale in no time:
 
-# Step 3: Install the necessary dependencies.
-npm i
+-   Descriptive and Simple Admin Panel.
+-   Admin Dashboard.
+-   Custom Attributes.
+-   Built on Modular Approach.
+-   Email parsing via Sendgrid.
+-   Check out [these features and more](https://krayincrm.com/features/).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+**For Developers**:
+Take advantage of two of the hottest frameworks used in this project -- Laravel and Vue.js -- both of which have been used in Krayin CRM.
+
+### Documentation
+
+#### Krayin Documentation [https://devdocs.krayincrm.com](https://devdocs.krayincrm.com)
+
+### Requirements
+
+-   **SERVER**: Apache 2 or NGINX.
+-   **RAM**: 3 GB or higher.
+-   **PHP**: 8.1 or higher
+-   **For MySQL users**: 5.7.23 or higher.
+-   **For MariaDB users**: 10.2.7 or Higher.
+-   **Node**: 8.11.3 LTS or higher.
+-   **Composer**: 2.5 or higher
+
+### Installation and Configuration
+
+##### Execute these commands below, in order
+
+```
+composer create-project
 ```
 
-**Edit a file directly in GitHub**
+-   Find **.env** file in root directory and change the **APP_URL** param to your **domain**.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+-   Also, Configure the **Mail** and **Database** parameters inside **.env** file.
 
-**Use GitHub Codespaces**
+```
+php artisan krayin-crm:install
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**To execute Krayin**:
 
-## What technologies are used for this project?
+##### On server:
 
-This project is built with:
+Warning: Before going into production mode we recommend you uninstall developer dependencies.
+In order to do that, run the command below:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+> composer install --no-dev
 
-## How can I deploy this project?
+```
+Open the specified entry point in your hosts file in your browser or make an entry in hosts file if not done.
+```
 
-Simply open [Lovable](https://lovable.dev/projects/d02608c0-a4b0-47dc-84fa-3c5d0835b199) and click on Share -> Publish.
+##### On local:
 
-## Can I connect a custom domain to my Lovable project?
+```
+php artisan route:clear
+php artisan serve
+```
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**How to log in as admin:**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+> _http(s)://example.com/admin/login_
+
+```
+email:admin@example.com
+password:admin123
+```
+### Krayin CRM Multi Tenant SaaS
+
+[Krayin CRM Multi Tenant SaaS](https://krayincrm.com/extensions/krayin-crm-multi-tenant-saas-extension/) Krayin Multitenant SaaS is a Laravel-based CRM solution that allows multiple businesses (tenants) to use a single application instance while keeping their data isolated and secure.
+
+![enter image description here](https://raw.githubusercontent.com/krayin/temp-media/master/krayin-saas.png)
+
+### WhatsApp CRM Integration
+
+[Krayin CRM WhatsApp](https://krayincrm.com/extensions/krayin-crm-whatsapp-extension/) Extension enables the store administrator to generate leads via their WhatsApp number.
+
+![enter image description here](https://raw.githubusercontent.com/krayin/temp-media/master/krayin-crm-whatsapp-integration.png)
+
+### VoIP CRM Integration
+
+[Krayin CRM VoIP](https://krayincrm.com/extensions/krayin-crm-voip/) extension allows the user to make Trunk calls over a broadband Internet connection and the user can also perform Inbound routes.
+
+![enter image description here](https://raw.githubusercontent.com/krayin/temp-media/master/krayin-voip.png)
+
+### License
+
+Krayin CRM is a fully open-source CRM framework which will always be free under the [MIT License](https://github.com/krayin/laravel-crm/blob/2.1/LICENSE).
+
+### Security Vulnerabilities
+
+Please don't disclose security vulnerabilities publicly. If you find any security vulnerability in Krayin CRM then please email us: sales@krayincrm.com.
